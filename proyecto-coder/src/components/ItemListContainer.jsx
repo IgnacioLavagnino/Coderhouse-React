@@ -1,7 +1,12 @@
-function ItemListContainer(props) {
+import productos from '../productos'
+import ProductoItem from './ProductoItem'
+
+function ItemListContainer() {
     return (
-        <div>
-            <h1> {props.msg} </h1>
+        <div className='d-flex flex-wrap justify-content-center align-items-center'>
+            {productos.map(prod => (
+                <ProductoItem key={prod.id} {...prod}/>  
+            ))}
         </div>
     )
 }
